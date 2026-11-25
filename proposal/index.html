@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luan de Medeiros · Conversion 360</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: the Sage. Quiet confidence, high ticket, editorial.
+IDEA: a funnel that turns noise into a few bright opportunities; every section shows that narrowing.
+PICTURE: converging particle field, layered funnel, journey line, before/after bars, 12-month Gantt, guarantee gauge.
+COLOUR and TYPE: Navy #101337, Electric Blue #11a6f9, off-white; Instrument Serif display, Poppins Light text.
+LAYOUT: alternating deep navy and paper bands, 1240px column, cards on hairlines.
+*/
+:root{--navy:#101337;--navy2:#0a0c26;--blue:#11a6f9;--blue2:#5cc6ff;--gph:#7B7878;--ink:#141428;--paper:#f6f5f1;--paper2:#eeece6;--line:#e1dfd8;--dline:rgba(255,255,255,.1);--serif:'Instrument Serif',Georgia,serif;--sans:'Poppins',Arial,sans-serif}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font:300 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3{font-family:var(--serif);font-weight:400;font-variation-settings:'opsz' 96;font-optical-sizing:none;margin:0;letter-spacing:-.012em;line-height:1.02;text-wrap:balance}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--blue)}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,20px)}
+.band{padding:clamp(72px,9vw,140px) 0;position:relative;overflow:clip}
+.dark{background:var(--navy);color:#fff}.dark2{background:var(--navy2);color:#fff}.alt{background:var(--paper2)}
+.eb{display:flex;align-items:center;gap:14px;font-size:11.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--navy);margin-bottom:28px;flex-wrap:wrap}
+.eb:before{content:"";width:34px;height:1px;background:var(--blue)}
+.eb .t{color:var(--gph);font-weight:400;letter-spacing:.18em}
+.dark .eb,.dark2 .eb{color:var(--blue)}.dark .eb .t,.dark2 .eb .t{color:#8f93b8}
+.h1{font-size:clamp(52px,8.6vw,124px);line-height:.96}
+.h2{font-size:clamp(40px,5.4vw,78px)}
+.h3{font-size:clamp(30px,3.6vw,48px)}
+.htr{font-style:italic;color:var(--gph);font-size:clamp(16px,1.6vw,21px);margin-top:14px;line-height:1.35}
+.dark .htr,.dark2 .htr{color:#9ea3cc}
+.lead{font-size:clamp(16px,1.35vw,19px);line-height:1.65;color:#33334a;max-width:640px}
+.dark .lead,.dark2 .lead{color:#d4d7ee}
+.tr{color:var(--gph);font-size:.88em;line-height:1.55;margin-top:6px}
+.tr:before{content:"TR";font-size:.66em;font-weight:600;letter-spacing:.18em;color:var(--blue);margin-right:.7em;vertical-align:.15em}
+.tr.n:before{content:none}
+.dark .tr,.dark2 .tr{color:#9ea3cc}
+.lbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gph);font-weight:500}
+.dark .lbl,.dark2 .lbl{color:#8f93b8}
+.small{font-size:12px;color:var(--gph)}
+.bio{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;align-items:center;padding:22px}.bio img{width:150px;height:150px;object-fit:cover;border-radius:12px;filter:grayscale(1) contrast(1.05)}.bio .b{font-size:15px;color:#33334a;margin-top:8px}.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 1px 0 rgba(16,19,55,.03),0 18px 40px -28px rgba(16,19,55,.35)}
+.dark .card,.dark2 .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border-color:var(--dline);box-shadow:none}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(140deg,rgba(17,166,249,.16),rgba(17,166,249,.04));color:var(--blue);margin-bottom:18px}
+.ico svg{width:22px;height:22px}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;opacity:.55}
+svg text{font-family:var(--sans)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,12,38,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--dline)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
+.logo{display:inline-flex;align-items:center;gap:0;font:600 19px/1 var(--sans);color:#fff;text-decoration:none;letter-spacing:-.01em}
+.logo .wm{text-transform:none}.logo b{position:relative;font-weight:600}.logo b:before{content:"";position:absolute;left:-.04em;right:-.02em;top:-.03em;height:.13em;background:var(--blue)}
+.logo svg{width:.8em;height:.8em}.bdot{display:inline-block;width:.34em;height:.34em;border-radius:50%;background:var(--blue);margin-left:.06em;align-self:flex-end;margin-bottom:.1em}.opt{display:inline-block;font-size:.72em;font-weight:500;letter-spacing:.04em;color:var(--blue);border:1px solid rgba(17,166,249,.45);border-radius:999px;padding:0 .6em;vertical-align:.12em;font-style:normal;margin-left:.3em}.optnote{margin-top:10px;font-size:12.5px;line-height:1.5;color:var(--navy);background:rgba(17,166,249,.1);border-left:2px solid var(--blue);padding:8px 10px;border-radius:0 6px 6px 0}.optnote .tr{font-size:11.5px;margin-top:4px}.optnote .tr:before{content:none}
+.links{display:flex;gap:22px;font-size:12.5px;overflow-x:auto;scrollbar-width:none}
+.links a{color:#b9bddc;text-decoration:none;white-space:nowrap}.links a:hover{color:#fff}
+
+/* hero */
+.hero{background:radial-gradient(1200px 600px at 85% 30%,rgba(17,166,249,.18),transparent 60%),var(--navy2);color:#fff;padding:clamp(56px,7vw,100px) 0 clamp(56px,6vw,90px);overflow:hidden}
+.hero .grid2{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.hero .meta{display:flex;justify-content:space-between;font-size:11.5px;letter-spacing:.3em;color:#8f93b8;text-transform:uppercase;margin-bottom:44px;gap:16px;flex-wrap:wrap}
+.hero .lead{margin-top:34px;color:#d4d7ee}.hero .tr{color:#9ea3cc}
+.field{position:relative;aspect-ratio:1/1;width:100%}
+.field svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.chips-h{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.pill{border:1px solid var(--dline);border-radius:999px;padding:8px 14px;font-size:12.5px;color:#cfd3ee;background:rgba(255,255,255,.03)}
+.pill b{color:var(--blue);font-weight:500}
+
+/* stats + logos */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:48px}
+.stat .v{font-family:var(--serif);font-variation-settings:'opsz' 96;font-size:clamp(54px,6vw,88px);line-height:1;color:var(--navy)}
+.stat .v i{color:var(--blue)}
+.stat .lbl{display:block;margin-top:14px;line-height:1.6;color:#55556a}
+.marq{margin-top:64px;border-top:1px solid var(--line);padding-top:26px}
+.belt{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:64px;width:max-content;animation:slide 38s linear infinite;align-items:center;padding:22px 0}
+.track img{height:54px;width:150px;object-fit:contain;opacity:.86}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* problem chart */
+.chart{position:relative;aspect-ratio:16/11;width:100%}
+.chart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:#b9bddc;margin-top:14px}
+.legend span{display:inline-flex;align-items:center;gap:8px}.legend i{width:18px;height:2px;display:inline-block}
+
+/* opportunity grid */
+.dots{display:grid;grid-template-columns:repeat(20,1fr);gap:7px;margin-top:8px}
+.dots i{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.14)}
+.dots i.o{background:var(--blue);box-shadow:0 0 14px var(--blue)}
+.industry{margin-top:clamp(70px,8vw,120px);text-align:center;border-top:1px solid var(--dline);padding-top:clamp(56px,6vw,90px)}
+.industry .h1{max-width:1000px;margin:0 auto}
+
+/* funnel */
+.fn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(30px,5vw,70px);align-items:center;margin-top:56px}
+.fn svg{width:100%;height:auto;overflow:visible}
+.filters{display:grid;gap:14px}
+.filter{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:start;padding:20px 22px}
+.filter .n{font-family:var(--serif);font-size:34px;line-height:1;color:var(--blue)}
+.filter h3{font-family:var(--sans);font-weight:500;font-size:16.5px;color:var(--navy);margin-bottom:4px;letter-spacing:0}
+.filter p.b{font-size:14.5px;color:#44445a}
+
+/* journey */
+.journey{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:64px}
+.journey:before{content:"";position:absolute;left:4%;right:4%;top:31px;height:2px;background:linear-gradient(90deg,rgba(17,166,249,.15),var(--blue),rgba(17,166,249,.15))}
+.step{position:relative;padding:0}
+.node{position:relative;width:64px;height:64px;border-radius:50%;background:var(--paper);border:1.5px solid var(--blue);display:grid;place-items:center;color:var(--blue);margin-bottom:22px;box-shadow:0 0 0 8px var(--paper)}
+.node svg{width:24px;height:24px}
+.node em{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font:600 11px/22px var(--sans);text-align:center;font-style:normal}
+.step.own .node{background:var(--navy);border-color:var(--navy);color:#fff}
+.step.own .node em{background:#fff;color:var(--navy)}
+.step h3{font-family:var(--sans);font-size:16px;font-weight:500;color:var(--navy);letter-spacing:0}
+.step h4{margin:2px 0 10px;font-size:12.5px;font-weight:300;font-style:italic;color:var(--gph)}
+.step .b{font-size:14px;color:#44445a;line-height:1.55}
+.step .tr{font-size:12.5px}
+.who-does{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:48px;padding:22px 26px;align-items:center}
+.key{display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:#55556a;white-space:nowrap}
+.key span{display:flex;align-items:center;gap:8px}.key i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--blue)}.key i.f{background:var(--navy);border-color:var(--navy)}
+
+/* case */
+.case-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.case-meta{text-align:right}.case-meta .lbl{display:block;line-height:2}
+.cmp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:52px}
+.cmp .card{padding:28px}
+.bars{display:grid;gap:14px;margin-top:18px}
+.bar{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:14px;align-items:center;font-size:12.5px;color:#9ea3cc}
+.bar .tk{height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden}
+.bar .tk i{display:block;height:100%;border-radius:6px;background:rgba(255,255,255,.32);width:var(--w);transform-origin:left;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.bar.a .tk i{background:linear-gradient(90deg,#1b7fd0,var(--blue))}
+.bar .v{font-family:var(--serif);font-size:22px;color:#fff;white-space:nowrap}
+.delta{display:inline-block;margin-top:16px;font-size:12.5px;padding:5px 11px;border-radius:999px;background:rgba(17,166,249,.14);color:var(--blue2)}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.kpi .v{font-family:var(--serif);font-variation-settings:'opsz' 96;font-size:clamp(40px,4.4vw,62px);line-height:1;white-space:nowrap}
+.kpi .v i{color:var(--blue)}
+
+/* pieces */
+.pieces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:56px}
+.piece{position:relative;padding:28px 26px 26px}
+.piece .pn{position:absolute;top:22px;right:24px;font-family:var(--serif);font-size:26px;color:#d5d8ea}
+.piece .b{font-size:16px;font-weight:400;color:var(--navy);line-height:1.45;padding-right:30px}
+
+/* roadmap */
+.gantt{margin-top:56px;padding:28px 28px 22px;overflow-x:auto}
+.g-in{min-width:820px}
+.g-row{display:grid;grid-template-columns:220px minmax(0,1fr);align-items:center;height:42px;border-bottom:1px dashed #ebe9e2}
+.g-row:last-child{border-bottom:0}
+.g-row .nm{font-size:13.5px;color:var(--navy);font-weight:400;padding-right:14px}
+.g-lane{position:relative;height:100%;background:linear-gradient(90deg,transparent calc(25% - .5px),#eceae3 calc(25% - .5px),#eceae3 calc(25% + .5px),transparent calc(25% + .5px),transparent calc(50% - .5px),#eceae3 calc(50% - .5px),#eceae3 calc(50% + .5px),transparent calc(50% + .5px),transparent calc(75% - .5px),#eceae3 calc(75% - .5px),#eceae3 calc(75% + .5px),transparent calc(75% + .5px))}
+.g-lane i{position:absolute;top:12px;height:18px;border-radius:9px;left:calc((var(--s) - 1)/52*100%);width:calc((var(--e) - var(--s) + 1)/52*100%);background:linear-gradient(90deg,#1b7fd0,var(--blue));box-shadow:0 6px 14px -8px rgba(17,166,249,.9)}
+.g-lane i.soft{background:rgba(17,166,249,.22);box-shadow:none}
+.g-lane i.navy{background:var(--navy);box-shadow:none}
+.g-head{display:grid;grid-template-columns:220px repeat(4,minmax(0,1fr));font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gph);padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.g-head span b{display:block;font-family:var(--serif);font-size:20px;letter-spacing:0;text-transform:none;color:var(--navy);font-weight:400}
+.quarters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:18px}
+.qk{font-size:11px;letter-spacing:.24em;color:var(--blue);font-weight:500;text-transform:uppercase}
+.quarters h3{font-size:28px;color:var(--navy);margin:10px 0 2px}
+.quarters h4{font-weight:300;font-style:italic;font-size:13px;color:var(--gph);margin:0 0 12px}
+.quarters .b{font-size:14.5px;color:#44445a}
+
+/* stage detail */
+.stages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:56px}
+.stage{padding:0;overflow:hidden}
+.stage .top{padding:26px 28px 22px;background:linear-gradient(135deg,var(--navy),#1b2266);color:#fff;position:relative}
+.stage .top h3{font-size:34px}
+.stage .top small{display:block;font:italic 300 13px/1.4 var(--sans);color:#a7acd6;margin-top:6px}
+.stage .top .goal{margin-top:16px;font-size:14.5px;color:#e3e6f7;font-weight:400}
+.stage .top .goal .tr{display:block;font-weight:300}
+.stage .top .goal .tr:before{content:none}
+.stage .qn{position:absolute;right:22px;top:14px;font-family:var(--serif);font-size:64px;color:rgba(17,166,249,.28);line-height:1}
+.stage ul{list-style:none;margin:0;padding:22px 28px 6px}
+.stage li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:12px;margin-bottom:16px}
+.stage li:before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid var(--blue);margin-top:8px}
+.stage li .b{font-size:14.5px;color:#33334a}
+.stage li .b b{font-weight:500;color:var(--navy)}
+.stage li .tr{font-size:12.5px}.stage li .tr:before{content:none}
+.dl{margin:0 28px 26px;padding:16px 18px;border-radius:10px;background:#f7f8fd;border:1px solid #e3e6f5}
+.dl .lbl{color:var(--blue);display:block;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid #d9ddf0;border-radius:8px;padding:6px 10px;font-size:13px;color:var(--navy);font-weight:400;line-height:1.3}
+.chip small{display:block;color:var(--gph);font-weight:300;font-size:11.5px}
+
+/* glossary */
+.gl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:52px}
+.gl .card{padding:22px}
+.gl h3{font-size:24px;color:var(--navy)}
+.gl h3 small{display:block;font:italic 300 12.5px/1.4 var(--sans);color:var(--gph);margin-top:4px}
+.gl .b{font-size:14px;color:#44445a;margin-top:12px}
+.gl .tr{font-size:12.5px}.gl .tr:before{content:none}
+
+/* needs */
+.needs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:52px}
+.needs h3{font-size:28px;color:var(--navy)}
+.needs h3 small{display:block;font:italic 300 13px/1.4 var(--sans);color:var(--gph);margin-top:4px}
+.needs ul{list-style:none;margin:18px 0 0;padding:0}
+.needs li{padding:12px 0;border-top:1px solid var(--line)}
+.needs .b{font-size:14.5px;color:#33334a}
+.needs .tr{font-size:12.5px}.needs .tr:before{content:none}
+
+/* guarantee */
+.gauge{position:relative;max-width:460px;margin:0 auto}
+.gauge svg{width:100%;height:auto;overflow:visible}
+.fine{font-size:12.5px;font-style:italic;color:#8f93b8;margin-top:22px}
+
+/* investment */
+.price-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;margin-top:52px}
+.hero-price{padding:34px;background:linear-gradient(150deg,var(--navy),#1c2470);color:#fff;border:0;position:relative;overflow:hidden}
+.hero-price .amt{font-family:var(--serif);font-variation-settings:'opsz' 96;font-size:clamp(56px,6vw,86px);line-height:1;margin-top:14px}
+.hero-price .amt i{font-size:.4em;color:var(--blue2);font-style:italic}
+.hero-price .sub{font-size:14.5px;color:#cfd3ee;margin-top:10px}
+.stack{margin-top:30px}
+.stack .sb{display:flex;height:14px;border-radius:7px;overflow:hidden;background:rgba(255,255,255,.08)}
+.stack .sb span{display:block}
+.stack .rows{display:grid;gap:8px;margin-top:14px;font-size:13.5px;color:#cfd3ee}
+.stack .rows div{display:flex;justify-content:space-between;gap:12px}
+.stack .rows i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+.side{display:grid;gap:18px}.mo{font-family:var(--sans);font-weight:600;letter-spacing:-.03em;font-size:.82em}.permo{margin-top:24px;padding:16px 18px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}.permo div{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;color:#cfd3ee;padding:5px 0}.permo strong{color:#fff;font-weight:600;white-space:nowrap}.permo .tot{border-top:1px solid rgba(255,255,255,.18);margin-top:4px;padding-top:9px;font-size:15px;color:#fff}.permo .tot strong{color:var(--blue2);font-size:17px}.hero-price .sub strong{color:#fff;font-weight:600}
+.side .card{padding:24px}
+.side .amt{font-family:var(--serif);font-size:38px;color:var(--navy);line-height:1.05;margin-top:8px;white-space:nowrap}
+.side .amt i{font-style:italic;color:var(--blue);font-size:.6em}
+.side .b{font-size:14px;color:#44445a;margin-top:6px}
+.disc{font-size:12px;color:var(--gph);margin-top:24px;line-height:1.6}
+
+/* close */
+.next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:52px}
+.next .n{font-family:var(--serif);font-size:44px;color:var(--blue);line-height:1}
+.next .b{font-size:16px;color:#fff;margin-top:16px;font-weight:400}
+.next .tr:before{content:none}
+.cta{text-align:center;margin-top:clamp(80px,9vw,130px)}
+.foot{border-top:1px solid var(--dline);margin-top:80px;padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8f93b8}
+
+/* motion */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.bars-anim .tk i{transform:scaleX(0)}.bars-anim.in .tk i{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track{animation:none}.bars-anim .tk i{transform:none}}
+
+/* phones and narrow panes */
+@media (max-width:980px){
+ .journey{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}.journey:before{display:none}
+ .pieces,.gl,.needs,.quarters{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+ .grid2,.hero .grid2,.fn,.stages,.price-grid,.cmp,.kpis,.stats,.next,.who-does{grid-template-columns:minmax(0,1fr)}
+ .journey,.pieces,.gl,.needs,.quarters{grid-template-columns:minmax(0,1fr)}
+ .links{display:none}
+ .case-meta{text-align:left}
+ .field{max-width:420px;margin:0 auto}
+ .dots{gap:5px}
+ .bio{grid-template-columns:1fr}.bio img{width:100%;height:auto;aspect-ratio:4/3;object-position:center 30%}
+ .gantt{padding:18px 14px}.g-in{min-width:0}.g-row{grid-template-columns:104px minmax(0,1fr);height:38px}.g-row .nm{font-size:11px;line-height:1.25}
+ .g-head{grid-template-columns:104px repeat(4,minmax(0,1fr));font-size:0}.g-head span b{font-size:16px}.g-head>span:first-child{font-size:0}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="i-ad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4h3l6 4V6L6 10H3z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+  <symbol id="i-page" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></symbol>
+  <symbol id="i-ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9.5 15h5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+  <symbol id="i-dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.3 0 4 1.3 4.8 4"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8M4 13a8 8 0 0 0 14.5 4.5L20 16"/><path d="M4 4v4h4M20 20v-4h-4"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4h16v12H8l-4 4z"/><path d="M9 9h6M9 12h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="pw" viewBox="0 0 24 24" fill="none" stroke="#11a6f9" stroke-width="3" stroke-linecap="round"><path d="M12 3v8"/><path d="M6.6 6.6a8 8 0 1 0 10.8 0"/></symbol>
+ </defs>
+</svg>
+
+<nav class="nav"><div class="wrap">
+ <a class="logo" href="#top"><span class="wm">Luan de Medeiros</span><i class="bdot"></i></a>
+ <div class="links"><a href="#problem">Problem</a><a href="#method">Method</a><a href="#practice">In practice</a><a href="#case">Case</a><a href="#roadmap">Roadmap</a><a href="#glossary">Glossary</a><a href="#investment">Investment</a></div>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+ <div class="wrap">
+  <div class="meta"><span>Conversion Protocol 360 · Commercial proposal · Ticari teklif</span><span>11 · 25 · 2026</span></div>
+  <div class="grid2">
+   <div class="rv">
+    <h1 class="h1">Your predictable flow of <em>opportunities.</em></h1>
+    <p class="htr">Öngörülebilir fırsat akışınız.</p>
+    <div class="lead"><p>We organize your company's client acquisition so your sales team only talks to people with the right profile, intent, and awareness.</p><p class="tr">Şirketinizin müşteri kazanım sürecini, satış ekibiniz yalnızca doğru profile, niyete ve farkındalığa sahip kişilerle görüşecek şekilde düzenliyoruz.</p></div>
+    <div class="chips-h"><span class="pill"><b>12</b> months</span><span class="pill"><b>4</b> quarters</span><span class="pill"><b>2</b> platforms: Meta and Google</span><span class="pill"><b>2x</b> revenue guarantee</span></div>
+   </div>
+   <div class="field rv" aria-hidden="true">
+    <svg viewBox="0 0 500 500" id="fieldsvg">
+     <defs>
+      <radialGradient id="core"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="#5cc6ff"/><stop offset="1" stop-color="#11a6f9" stop-opacity="0"/></radialGradient>
+      <linearGradient id="ring" x1="0" x2="1"><stop offset="0" stop-color="#11a6f9" stop-opacity=".05"/><stop offset=".5" stop-color="#11a6f9" stop-opacity=".55"/><stop offset="1" stop-color="#11a6f9" stop-opacity=".05"/></linearGradient>
+     </defs>
+     <g fill="none" stroke="url(#ring)">
+      <ellipse cx="300" cy="250" rx="70" ry="200"/><ellipse cx="340" cy="250" rx="52" ry="140"/><ellipse cx="375" cy="250" rx="36" ry="88"/><ellipse cx="405" cy="250" rx="20" ry="42"/>
+     </g>
+     <g id="parts"></g>
+     <circle cx="430" cy="250" r="60" fill="url(#core)"/>
+     <circle cx="430" cy="250" r="5" fill="#fff"/>
+     <text x="430" y="330" text-anchor="middle" fill="#9ea3cc" font-size="10" letter-spacing="2.5">OPPORTUNITY</text>
+     
+    </svg>
+   </div>
+  </div>
+ </div>
+</header>
+
+<!-- WHO -->
+<section class="band">
+ <div class="wrap">
+  <div class="eb">Who's behind it <span class="t">· Biz kimiz</span></div>
+  <div class="grid2" style="align-items:end">
+   <div class="rv"><h2 class="h2">Marketing and sales. <em>One single thing.</em></h2><p class="htr">Pazarlama ve satış. Tek bir bütün.</p></div>
+   <div class="bio card rv"><img src="assets/luan.jpg" alt="Luan de Medeiros"><div><p class="lbl" style="color:var(--blue)">Luan de Medeiros</p><p class="b">He has worked on both sides of the table. He started in door-to-door sales, became SDR, closer and sales manager, then digital strategist for launches and evergreen funnels. Since 2015 he has led client acquisition for B2B companies, connecting what marketing promises with what sales can close.</p><p class="tr">Masanın her iki tarafında da çalıştı. Kapı kapı satışla başladı; SDR, satış kapanışçısı ve satış müdürü oldu, ardından lansmanlar ve sürekli satış hunileri için dijital stratejist olarak çalıştı. 2015'ten beri B2B şirketlerin müşteri kazanımını yönetiyor ve pazarlamanın vaat ettiği ile satışın kapatabileceğini birbirine bağlıyor.</p></div></div>
+  </div>
+  <div class="stats">
+   <div class="stat card rv"><span class="v" data-count="2015">2015</span><span class="lbl">Running B2B client acquisition since this year</span><p class="tr n">2015'ten beri B2B şirketler için müşteri kazanımı yönetiyoruz</p></div>
+   <div class="stat card rv"><span class="v">500<i>k+</i></span><span class="lbl">Opportunities generated for clients through the campaigns we operate</span><p class="tr n">Yönettiğimiz kampanyalarla müşterilere sağlanan fırsat</p></div>
+   <div class="stat card rv"><span class="v">20<i>x</i></span><span class="lbl">Average ROI on ad spend</span><p class="tr n">Reklam yatırımında ortalama getiri</p></div>
+  </div>
+  <div class="marq"><p class="lbl">Ongoing and completed engagements · <span style="text-transform:none;letter-spacing:.04em;font-weight:300">Devam eden ve tamamlanan projeler</span></p>
+   <div class="belt"><div class="track">
+    <img src="assets/logo-supera.png" alt="Supera"><img src="assets/logo-xavier.png" alt="Xavier Gonçalves Advogados"><img src="assets/logo-liberty.png" alt="Liberty"><img src="assets/logo-b2.png" alt="B2 Móveis sob Medida"><img src="assets/logo-procuidar.png" alt="Procuidar"><img src="assets/logo-conceitored.png" alt="Conceito Red"><img src="assets/logo-pck.png" alt="PCK Corretora"><img src="assets/logo-egd.png" alt="EGD Filmes"><img src="assets/logo-kappi.png" alt="Kappi">
+    <img src="assets/logo-supera.png" alt=""><img src="assets/logo-xavier.png" alt=""><img src="assets/logo-liberty.png" alt=""><img src="assets/logo-b2.png" alt=""><img src="assets/logo-procuidar.png" alt=""><img src="assets/logo-conceitored.png" alt=""><img src="assets/logo-pck.png" alt=""><img src="assets/logo-egd.png" alt=""><img src="assets/logo-kappi.png" alt="">
+   </div></div>
+  </div>
+ </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="band dark" id="problem">
+ <div class="glow" style="width:520px;height:520px;background:#11a6f9;right:-160px;top:40px;opacity:.18"></div>
+ <div class="wrap">
+  <div class="grid2">
+   <div class="rv">
+    <div class="eb">The problem <span class="t">· Sorun</span></div>
+    <h2 class="h2">Leads come in. Revenue <em>doesn't.</em></h2>
+    <p class="htr">Lead'ler geliyor. Gelir gelmiyor.</p>
+    <div class="lead" style="margin-top:28px"><p>Most acquisition strategies are built to show activity: leads, clicks, views, followers. Reports look good and the numbers go up every month. None of these metrics pays salaries. A campaign succeeds when it produces sales and revenue, and that is exactly the number traditional marketing rarely puts on the table.</p><p class="tr">Müşteri kazanım stratejilerinin çoğu faaliyet göstermek için kurulur: lead, tıklama, görüntüleme, takipçi. Raporlar iyi görünür ve rakamlar her ay artar. Bu ölçütlerin hiçbiri maaş ödemez. Bir kampanya satış ve gelir ürettiğinde başarılıdır; geleneksel pazarlama ise tam da bu rakamı nadiren masaya koyar.</p><p style="margin-top:18px">Ad spend goes up, click reports arrive every week, and sales still closes the month without selling. Cost rises. Predictability never comes.</p><p class="tr">Reklam bütçesi artıyor, her hafta tıklama raporları geliyor ve satış ekibi ayı yine satış yapmadan kapatıyor. Maliyet yükseliyor. Öngörülebilirlik bir türlü gelmiyor.</p></div>
+   </div>
+   <div class="rv">
+    <div class="chart card" style="padding:0">
+     <svg viewBox="0 0 560 385" aria-label="Illustrative chart: leads and ad spend rise while revenue stays flat">
+      <defs><linearGradient id="la" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11a6f9" stop-opacity=".35"/><stop offset="1" stop-color="#11a6f9" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="rgba(255,255,255,.07)"><path d="M50 80H530M50 150H530M50 220H530M50 290H530"/></g>
+      <path d="M50 300 C140 285 200 250 280 215 S420 130 530 70 L530 330 L50 330Z" fill="url(#la)"/>
+      <path d="M50 300 C140 285 200 250 280 215 S420 130 530 70" fill="none" stroke="#11a6f9" stroke-width="2.5"/>
+      <path d="M50 315 C150 305 240 280 330 250 S460 200 530 175" fill="none" stroke="#8f93b8" stroke-width="1.5" stroke-dasharray="5 6"/>
+      <path d="M50 290 C150 292 250 288 330 291 S460 287 530 289" fill="none" stroke="#fff" stroke-width="2.5"/>
+      <circle cx="530" cy="70" r="5" fill="#11a6f9"/><circle cx="530" cy="289" r="5" fill="#fff"/>
+      <text x="520" y="58" text-anchor="end" fill="#5cc6ff" font-size="12">Leads</text>
+      <text x="520" y="168" text-anchor="end" fill="#8f93b8" font-size="12">Ad spend</text>
+      <text x="520" y="278" text-anchor="end" fill="#fff" font-size="12">Revenue</text>
+      <g fill="#6c71a3" font-size="10.5" letter-spacing="1.5"><text x="50" y="360">MONTH 1</text><text x="530" y="360" text-anchor="end">MONTH 12</text></g>
+      <path d="M50 330H530" stroke="rgba(255,255,255,.25)"/>
+      <text x="50" y="40" fill="#6c71a3" font-size="10.5" letter-spacing="1.5">THE LEAD INDUSTRY, ILLUSTRATIVE</text>
+     </svg>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- LEAD vs OPPORTUNITY + INDUSTRY -->
+<section class="band dark2">
+ <div class="wrap">
+  <div class="grid2">
+   <div class="rv">
+    <div class="eb">Why it hasn't been solved yet <span class="t">· Neden hâlâ çözülmedi</span></div>
+    <h2 class="h2">A lead isn't <em>an opportunity.</em></h2>
+    <p class="htr">Lead, fırsat demek değildir.</p>
+    <div class="lead" style="margin-top:28px"><p>An opportunity is someone with the right profile, an identified pain point, and the right level of awareness. Between a lead and an opportunity there is a missing process. That is the process we install.</p><p class="tr">Fırsat; doğru profile sahip, sorununu tanımlamış ve doğru farkındalık seviyesindeki kişidir. Lead ile fırsat arasında eksik bir süreç vardır. Kurduğumuz süreç budur.</p><p style="margin-top:18px">That process starts with fit: a real problem or latent desire of your target audience has to meet the way your offer is presented. Every message, from the first ad to the sales conversation, must lead the prospect to one obvious conclusion: buying is the logical next step.</p><p class="tr">Bu süreç uyumla başlar: hedef kitlenizin gerçek bir sorunu veya gizli bir arzusu, teklifinizin sunuluş biçimiyle buluşmalıdır. İlk reklamdan satış görüşmesine kadar her mesaj, adayı tek bir açık sonuca götürmelidir: satın almak mantıklı bir sonraki adımdır.</p></div>
+   </div>
+   <div class="card rv" style="padding:30px">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="lbl">200 leads</span><span class="lbl" style="color:var(--blue)">Only a few are opportunities</span></div>
+    <div class="dots" id="dots" style="margin-top:20px"></div>
+    <div class="legend"><span><i style="background:rgba(255,255,255,.25);height:10px;width:10px;border-radius:50%"></i>Lead</span><span><i style="background:#11a6f9;height:10px;width:10px;border-radius:50%"></i>Opportunity: right profile, pain, awareness and moment</span></div>
+   </div>
+  </div>
+  <div class="industry rv">
+   <h2 class="h1">You don't need more clicks, views or sign-ups. Success is measured in <em>sales.</em> Period.</h2>
+   <p class="htr">Daha fazla tıklamaya, görüntülemeye veya kayda ihtiyacınız yok. Başarı satışla ölçülür. Nokta.</p>
+  </div>
+ </div>
+</section>
+
+<!-- METHOD -->
+<section class="band" id="method">
+ <div class="wrap">
+  <div class="eb">How we solve it <span class="t">· Nasıl çözüyoruz</span></div>
+  <div class="grid2" style="align-items:end">
+   <div class="rv"><h2 class="h2">Progressive <em>Qualification.</em></h2><p class="htr">Kademeli Nitelendirme.</p></div>
+   <div class="lead rv"><p>At every stage of the funnel, the prospect confirms whether they're the right person, at the right time. By the time they reach sales, the conversation already starts at the closing point.</p><p class="tr">Hunin her aşamasında aday, doğru kişi olup olmadığını ve doğru zamanda olup olmadığını teyit eder. Satış ekibine ulaştığında görüşme zaten kapanış noktasından başlar.</p></div>
+  </div>
+  <div class="fn">
+   <div class="rv" aria-hidden="true">
+    <svg viewBox="0 0 460 520">
+     <defs>
+      <linearGradient id="f1" x1="0" x2="1"><stop offset="0" stop-color="#dfe6f7"/><stop offset=".5" stop-color="#f4f7fd"/><stop offset="1" stop-color="#dfe6f7"/></linearGradient>
+      <linearGradient id="f2" x1="0" x2="1"><stop offset="0" stop-color="#b8d4f3"/><stop offset=".5" stop-color="#dcecfb"/><stop offset="1" stop-color="#b8d4f3"/></linearGradient>
+      <linearGradient id="f3" x1="0" x2="1"><stop offset="0" stop-color="#6fb9ef"/><stop offset=".5" stop-color="#a9d9fb"/><stop offset="1" stop-color="#6fb9ef"/></linearGradient>
+      <linearGradient id="f4" x1="0" x2="1"><stop offset="0" stop-color="#0d8fe0"/><stop offset=".5" stop-color="#3fbaff"/><stop offset="1" stop-color="#0d8fe0"/></linearGradient>
+      <linearGradient id="f5" x1="0" x2="1"><stop offset="0" stop-color="#0b0e33"/><stop offset=".5" stop-color="#1d2470"/><stop offset="1" stop-color="#0b0e33"/></linearGradient>
+     </defs>
+     <path d="M20 40H440L392 130H68Z" fill="url(#f1)"/><ellipse cx="230" cy="40" rx="210" ry="18" fill="#eef2fb" stroke="#d5dcef"/>
+     <path d="M74 140H386L342 225H118Z" fill="url(#f2)"/>
+     <path d="M124 235H336L298 315H162Z" fill="url(#f3)"/>
+     <path d="M168 325H292L264 400H196Z" fill="url(#f4)"/>
+     <path d="M200 410H260L252 490H208Z" fill="url(#f5)"/>
+     <g font-size="13" fill="#101337" font-weight="500" text-anchor="middle"><text x="230" y="92">1 · Profile</text><text x="230" y="188">2 · Pain</text><text x="230" y="280" fill="#fff">3 · Solution</text><text x="230" y="368" fill="#fff">4 · Moment</text></g>
+     <circle cx="230" cy="505" r="7" fill="#11a6f9"/><circle cx="230" cy="505" r="16" fill="none" stroke="#11a6f9" opacity=".35"/>
+     <text x="230" y="535" text-anchor="middle" font-size="11" letter-spacing="2.5" fill="#11a6f9">SALE · SATIŞ</text>
+     <text x="20" y="16" font-size="11" letter-spacing="2.5" fill="#7B7878">PROFILE · PROFİL</text>
+    </svg>
+   </div>
+   <div>
+    <div class="eb" style="margin-bottom:18px">Four filters before the salesperson <span class="t">· Satışçıdan önce dört filtre</span></div>
+    <h3 class="h3" style="color:var(--navy)">What every lead confirms before reaching you.</h3>
+    <p class="htr" style="margin-bottom:26px">Her lead'in size ulaşmadan önce teyit ettiği dört şey.</p>
+    <div class="filters">
+     <div class="card filter rv"><span class="n">1</span><div><h3>Demographic profile</h3><p class="b">Revenue, segment, and decision-maker filtered before a click becomes a lead.</p><p class="tr"><b style="font-weight:500">Demografik profil.</b> Ciro, sektör ve karar verici; bir tıklama lead'e dönüşmeden önce filtrelenir.</p></div></div>
+     <div class="card filter rv"><span class="n">2</span><div><h3>Identification with the pain point</h3><p class="b">The lead recognizes the problem described. Whoever doesn't have the pain doesn't get in.</p><p class="tr"><b style="font-weight:500">Sorunla özdeşleşme.</b> Lead, anlatılan sorunu kendinde tanır. Bu sorunu yaşamayan içeri girmez.</p></div></div>
+     <div class="card filter rv"><span class="n">3</span><div><h3>Perception of the solution</h3><p class="b">The funnel shows your company solves it in a way others don't.</p><p class="tr"><b style="font-weight:500">Çözümün algılanması.</b> Huni, şirketinizin bu sorunu başkalarından farklı bir şekilde çözdüğünü gösterir.</p></div></div>
+     <div class="card filter rv"><span class="n">4</span><div><h3>Buying moment</h3><p class="b">Form and pre-sales script confirm urgency before sales steps in.</p><p class="tr"><b style="font-weight:500">Satın alma anı.</b> Form ve satış öncesi senaryo, satış ekibi devreye girmeden önce aciliyeti teyit eder.</p></div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="band alt" id="practice">
+ <div class="wrap">
+  <div class="eb">In practice <span class="t">· Uygulamada</span></div>
+  <h2 class="h2 rv" style="color:var(--navy)">The path of an opportunity, <em>step by step.</em></h2>
+  <p class="htr">Bir fırsatın yolculuğu, adım adım.</p>
+  <div class="journey">
+   <div class="step rv"><div class="node"><svg><use href="#i-ad"/></svg><em>1</em></div><h3>Ad</h3><h4>Reklam</h4><p class="b">Runs on Meta (Instagram, Facebook) and Google (Search, YouTube). It speaks to one specific pain, so the wrong people scroll past.</p><p class="tr n">Meta (Instagram, Facebook) ve Google'da (Arama, YouTube) yayınlanır. Tek bir soruna seslenir; yanlış kişiler geçip gider.</p></div>
+   <div class="step rv"><div class="node"><svg><use href="#i-page"/></svg><em>2</em></div><h3>Landing page</h3><h4>Açılış sayfası</h4><p class="b">One page for one offer. It explains the problem and the solution, and the form asks qualifying questions.</p><p class="tr n">Tek teklif için tek sayfa. Sorunu ve çözümü anlatır; form nitelendirme soruları sorar.</p></div>
+   <div class="step rv"><div class="node"><svg><use href="#i-ai"/></svg><em>3</em></div><h3>AI SDR agent <span class="opt">(optional)</span></h3><h4>Yapay zekâ SDR</h4><p class="b">Answers on WhatsApp within minutes, 24 hours a day, asks the remaining questions and books the meeting.</p><p class="tr n">WhatsApp'ta dakikalar içinde, günün 24 saati yanıt verir; kalan soruları sorar ve görüşmeyi planlar.</p><div class="optnote">Optional: a person can do this step instead. We recommend a person for the first 90 to 180 days.<p class="tr">İsteğe bağlı: bu adımı bir kişi de yapabilir. İlk 90 ile 180 gün için bir kişinin yapmasını öneriyoruz.</p></div></div>
+   <div class="step rv"><div class="node"><svg><use href="#i-mail"/></svg><em>4</em></div><h3>Follow-up</h3><h4>Takip</h4><p class="b">Whoever is not ready yet receives emails and remarketing ads until the right moment.</p><p class="tr n">Henüz hazır olmayanlar, doğru an gelene kadar e-posta ve yeniden pazarlama reklamları alır.</p></div>
+   <div class="step own rv"><div class="node"><svg><use href="#i-user"/></svg><em>5</em></div><h3>Your salesperson</h3><h4>Satış temsilciniz</h4><p class="b">Receives the opportunity with its full history: profile, answers and pain point. The conversation starts at the closing point.</p><p class="tr n">Fırsatı tüm geçmişiyle alır: profil, cevaplar ve sorun. Görüşme kapanış noktasından başlar.</p></div>
+   <div class="step rv"><div class="node"><svg><use href="#i-dash"/></svg><em>6</em></div><h3>Dashboard</h3><h4>Gösterge paneli</h4><p class="b">Every step is measured in real time: cost per opportunity, conversion at each stage, revenue.</p><p class="tr n">Her adım gerçek zamanlı ölçülür: fırsat başına maliyet, her aşamadaki dönüşüm, gelir.</p></div>
+  </div>
+  <div class="card who-does rv">
+   <div class="key"><span><i></i>We build and run</span><span><i class="f"></i>Your team</span></div>
+   <p style="font-size:15px">We build and operate steps 1, 2, 3, 4 and 6. Your sales team owns step 5, with weekly support from us to adjust scripts and handoff.</p>
+   <p class="tr" style="margin:0">1, 2, 3, 4 ve 6. adımları biz kurar ve yönetiriz. 5. adım satış ekibinize aittir; senaryo ve devir sürecini ayarlamak için her hafta bizden destek alır.</p>
+  </div>
+ </div>
+</section>
+
+<!-- CASE -->
+<section class="band dark" id="case">
+ <div class="glow" style="width:600px;height:600px;background:#11a6f9;left:-260px;bottom:-200px;opacity:.16"></div>
+ <div class="wrap">
+  <div class="eb">Case study <span class="t">· Vaka çalışması</span></div>
+  <div class="case-head">
+   <div class="rv"><h2 class="h2"><em style="color:#fff">Less invested.</em> Nearly double the sales.</h2><p class="htr">Daha az yatırım. Neredeyse iki kat satış.</p></div>
+   <div class="case-meta"><span class="lbl">Supera Menino Deus</span><span class="lbl">Education franchise · Porto Alegre, Brazil</span><span class="lbl">Period: 7 months</span><p class="tr n" style="font-size:12.5px">Eğitim franchise'ı · Porto Alegre, Brezilya · 7 aylık dönem</p></div>
+  </div>
+  <div class="cmp">
+   <div class="card bars-anim rv"><p class="lbl">Invested · Yatırım</p>
+    <div class="bars"><div class="bar"><span>Before · Önce</span><div class="tk"><i style="--w:100%"></i></div><span class="v">R$ 5,204</span></div><div class="bar a"><span>After · Sonra</span><div class="tk"><i style="--w:93.8%"></i></div><span class="v">R$ 4,880</span></div></div>
+    <span class="delta">6% less media</span></div>
+   <div class="card bars-anim rv"><p class="lbl">Leads</p>
+    <div class="bars"><div class="bar"><span>Before · Önce</span><div class="tk"><i style="--w:100%"></i></div><span class="v">288</span></div><div class="bar a"><span>After · Sonra</span><div class="tk"><i style="--w:61.8%"></i></div><span class="v">178</span></div></div>
+    <span class="delta">38% fewer, better leads</span></div>
+   <div class="card bars-anim rv"><p class="lbl">Sales · Satış</p>
+    <div class="bars"><div class="bar"><span>Before · Önce</span><div class="tk"><i style="--w:52.6%"></i></div><span class="v">10</span></div><div class="bar a"><span>After · Sonra</span><div class="tk"><i style="--w:100%"></i></div><span class="v">19</span></div></div>
+    <span class="delta">+90% sales</span></div>
+  </div>
+  <div class="kpis">
+   <div class="card kpi rv"><p class="v"><i>20.47x</i></p><p class="lbl" style="margin-top:14px">ROI on media spend</p><p class="tr n">Medya harcamasının getirisi</p></div>
+   <div class="card kpi rv"><p class="v">R$ 4,045</p><p class="lbl" style="margin-top:14px">Average ticket (was R$ 990)</p><p class="tr n">Ortalama satış tutarı (önceki: R$ 990)</p></div>
+   <div class="card kpi rv"><p class="v">R$ <i>176,558</i></p><p class="lbl" style="margin-top:14px">Revenue generated in the period</p><p class="tr n">Dönem içinde elde edilen gelir</p></div>
+  </div>
+  <p class="tr n" style="margin-top:26px;font-size:12.5px">Values in Brazilian reais (R$). Full case study available on video on request. · Değerler Brezilya reali (R$) cinsindendir. Videolu vaka çalışmasının tamamı talep üzerine paylaşılır.</p>
+ </div>
+</section>
+
+<!-- NINE PIECES -->
+<section class="band">
+ <div class="wrap">
+  <div class="eb">What needs to be in place <span class="t">· Nelerin hazır olması gerekir</span></div>
+  <h2 class="h2 rv" style="color:var(--navy)">Nine pieces that work <em>together.</em></h2>
+  <p class="htr">Birlikte çalışan dokuz parça.</p>
+  <div class="pieces">
+   <div class="card piece rv"><span class="pn">01</span><div class="ico"><svg><use href="#i-search"/></svg></div><p class="b">Diagnosis of what's blocking acquisition today</p><p class="tr n">Bugün müşteri kazanımını neyin engellediğinin teşhisi</p></div>
+   <div class="card piece rv"><span class="pn">02</span><div class="ico"><svg><use href="#i-target"/></svg></div><p class="b">Acquisition framework with goals and KPIs</p><p class="tr n">Hedefleri ve KPI'larıyla müşteri kazanım çerçevesi</p></div>
+   <div class="card piece rv"><span class="pn">03</span><div class="ico"><svg><use href="#i-funnel"/></svg></div><p class="b">Funnel on Meta and Google</p><p class="tr n">Meta ve Google üzerinde satış hunisi</p></div>
+   <div class="card piece rv"><span class="pn">04</span><div class="ico"><svg><use href="#i-img"/></svg></div><p class="b">Creatives tested and optimized every cycle</p><p class="tr n">Her döngüde test edilen ve iyileştirilen reklam görselleri</p></div>
+   <div class="card piece rv"><span class="pn">05</span><div class="ico"><svg><use href="#i-page"/></svg></div><p class="b">Pages built to qualify, not to inflate numbers</p><p class="tr n">Sayı şişirmek için değil, nitelendirmek için tasarlanan sayfalar</p></div>
+   <div class="card piece rv"><span class="pn">06</span><div class="ico"><svg><use href="#i-ai"/></svg></div><p class="b">AI SDR agent for 24h pre-qualification <span class="opt">(optional)</span></p><p class="tr n">7/24 ön nitelendirme yapan yapay zekâ SDR ajanı <span class="opt">(isteğe bağlı)</span></p></div>
+   <div class="card piece rv"><span class="pn">07</span><div class="ico"><svg><use href="#i-team"/></svg></div><p class="b">Weekly alignment with your sales team</p><p class="tr n">Satış ekibinizle haftalık uyum toplantısı</p></div>
+   <div class="card piece rv"><span class="pn">08</span><div class="ico"><svg><use href="#i-dash"/></svg></div><p class="b">Real-time dashboard (Looker)</p><p class="tr n">Gerçek zamanlı gösterge paneli (Looker)</p></div>
+   <div class="card piece rv"><span class="pn">09</span><div class="ico"><svg><use href="#i-loop"/></svg></div><p class="b">Continuous optimization based on data</p><p class="tr n">Verilere dayalı sürekli iyileştirme</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="band alt" id="roadmap">
+ <div class="wrap">
+  <div class="eb">The product <span class="t">· Ürün</span></div>
+  <div class="grid2" style="align-items:end">
+   <h2 class="h2 rv" style="color:var(--navy)">Conversion <em>360.</em></h2>
+   <div class="lead rv"><p>12 months. Four quarters. Funnel on top of funnel: each stage scales only on what the previous one already proved.</p><p class="tr">12 ay. Dört çeyrek. Huni üstüne huni: her aşama yalnızca bir öncekinin kanıtladığı şeyin üzerine büyür.</p></div>
+  </div>
+  <div class="card gantt rv"><div class="g-in">
+   <div class="g-head"><span>Workstream</span><span><b>Q1</b>Weeks 1 to 13</span><span><b>Q2</b>Weeks 14 to 26</span><span><b>Q3</b>Weeks 27 to 39</span><span><b>Q4</b>Weeks 40 to 52</span></div>
+   <div class="g-row"><span class="nm">Diagnosis and build</span><div class="g-lane"><i class="navy" style="--s:1;--e:6"></i></div></div>
+   <div class="g-row"><span class="nm">Funnel 1, first platform</span><div class="g-lane"><i style="--s:6;--e:52"></i></div></div>
+   <div class="g-row"><span class="nm">Creative testing cycles</span><div class="g-lane"><i class="soft" style="--s:6;--e:52"></i></div></div>
+   <div class="g-row"><span class="nm">Remarketing</span><div class="g-lane"><i style="--s:14;--e:52"></i></div></div>
+   <div class="g-row"><span class="nm">Landing page A/B tests</span><div class="g-lane"><i class="soft" style="--s:14;--e:26"></i></div></div>
+   <div class="g-row"><span class="nm">AI SDR agent <span class="opt">(optional)</span></span><div class="g-lane"><i class="soft" style="--s:18;--e:26"></i><i style="--s:27;--e:52"></i></div></div>
+   <div class="g-row"><span class="nm">Second platform</span><div class="g-lane"><i style="--s:27;--e:52"></i></div></div>
+   <div class="g-row"><span class="nm">Digital lead magnet</span><div class="g-lane"><i style="--s:40;--e:52"></i></div></div>
+   <div class="g-row"><span class="nm">Weekly alignment with sales</span><div class="g-lane"><i class="navy" style="--s:1;--e:52;opacity:.85"></i></div></div>
+   <div class="g-row"><span class="nm">Dashboard (Looker)</span><div class="g-lane"><i class="soft" style="--s:8;--e:52"></i></div></div>
+  </div></div>
+  <div class="quarters">
+   <div class="card rv"><p class="qk">Q1 · Days 0 to 90</p><h3>Foundation</h3><h4>Temel</h4><p class="b">Setup, first active funnel, validated creatives, sales team calibration.</p><p class="tr n">Kurulum, ilk aktif huni, doğrulanmış reklam görselleri, satış ekibinin kalibrasyonu.</p></div>
+   <div class="card rv"><p class="qk">Q2 · Days 90 to 180</p><h3>Acceleration</h3><h4>Hızlanma</h4><p class="b">Funnel 1 expansion, remarketing kicks off, positive ROI.</p><p class="tr n">1. huninin genişletilmesi, yeniden pazarlamanın başlaması, pozitif yatırım getirisi.</p></div>
+   <div class="card rv"><p class="qk">Q3 · Days 180 to 270</p><h3>Expansion</h3><h4>Genişleme</h4><p class="b">Second platform, AI SDR agent in full operation. <span class="opt">(optional)</span></p><p class="tr n">İkinci platform, yapay zekâ SDR ajanı tam kapasitede. <span class="opt">(isteğe bağlı)</span></p></div>
+   <div class="card rv"><p class="qk">Q4 · Days 270 to 365</p><h3>Conversion</h3><h4>Dönüşüm</h4><p class="b">Digital lead magnet, investment scaled on proven ROI.</p><p class="tr n">Dijital lead mıknatısı, kanıtlanmış getiriye göre ölçeklenen yatırım.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- STAGES -->
+<section class="band">
+ <div class="wrap">
+  <div class="eb">Stages and deliverables <span class="t">· Aşamalar ve teslimatlar</span></div>
+  <h2 class="h2 rv" style="color:var(--navy)">What happens, and what you <em>receive.</em></h2>
+  <div class="stages">
+   <div class="card stage rv"><div class="top"><span class="qn">Q1</span><h3>Foundation</h3><small>Temel · days 0 to 90</small><p class="goal">Put the first funnel live and validate it together with your sales team.<span class="tr n">Amaç: İlk huniyi yayına almak ve satış ekibinizle birlikte doğrulamak.</span></p></div>
+    <ul>
+     <li><div><p class="b"><b>Weeks 1 and 2, diagnosis.</b> Interviews with partners and sales team; review of past campaigns, CRM and sales data.</p><p class="tr">1. ve 2. hafta, teşhis. Ortaklar ve satış ekibiyle görüşmeler; geçmiş kampanyaların, CRM'in ve satış verilerinin incelenmesi.</p></div></li>
+     <li><div><p class="b"><b>Weeks 3 to 6, build.</b> Offer and messages, first landing page, tracking (pixel, Google Analytics, UTMs), CRM stages and handoff script.</p><p class="tr">3. ile 6. hafta arası, kurulum. Teklif ve mesajlar, ilk açılış sayfası, ölçüm altyapısı (piksel, Google Analytics, UTM), CRM aşamaları ve devir senaryosu.</p></div></li>
+     <li><div><p class="b"><b>Weeks 6 to 12, live.</b> First funnel running on the platform chosen in the diagnosis; creatives tested every cycle; weekly calibration with sales.</p><p class="tr">6. ile 12. hafta arası, yayın. Teşhiste seçilen platformda ilk huni yayında; her döngüde görseller test edilir; satış ekibiyle haftalık kalibrasyon.</p></div></li>
+    </ul>
+    <div class="dl"><span class="lbl">You receive · Teslim edilenler</span><div class="chips"><span class="chip">Diagnosis report<small>Teşhis raporu</small></span><span class="chip">KPI framework<small>KPI çerçevesi</small></span><span class="chip">Landing page 1<small>1. açılış sayfası</small></span><span class="chip">Ad creatives<small>Reklam görselleri</small></span><span class="chip">Tracking setup<small>Ölçüm kurulumu</small></span><span class="chip">Dashboard v1<small>Gösterge paneli v1</small></span><span class="chip">Sales handoff script<small>Satışa devir senaryosu</small></span></div></div>
+   </div>
+   <div class="card stage rv"><div class="top"><span class="qn">Q2</span><h3>Acceleration</h3><small>Hızlanma · days 90 to 180</small><p class="goal">Scale what worked in Q1 and reach positive ROI on media by day 180.<span class="tr n">Amaç: 1. çeyrekte işe yarayanı büyütmek ve 180. güne kadar medya harcamasında pozitif getiriye ulaşmak.</span></p></div>
+    <ul>
+     <li><div><p class="b"><b>Funnel 1 expansion.</b> New audiences, angles and creatives on top of what was validated.</p><p class="tr">1. huninin genişletilmesi. Doğrulananın üzerine yeni kitleler, yaklaşımlar ve görseller.</p></div></li>
+     <li><div><p class="b"><b>Remarketing starts.</b> Ads shown only to people who visited the page and did not take the next step.</p><p class="tr">Yeniden pazarlama başlar. Yalnızca sayfayı ziyaret edip bir sonraki adımı atmayan kişilere gösterilen reklamlar.</p></div></li>
+     <li><div><p class="b"><b>Page tests and follow-up.</b> Landing page variations compared (A/B); email and WhatsApp sequences; AI SDR agent configured and piloted. <span class="opt">(optional)</span></p><p class="tr">Sayfa testleri ve takip. Açılış sayfası varyasyonları karşılaştırılır (A/B); e-posta ve WhatsApp dizileri; yapay zekâ SDR ajanı kurulur ve pilot olarak çalıştırılır. <span class="opt">(isteğe bağlı)</span></p></div></li>
+    </ul>
+    <div class="dl"><span class="lbl">You receive · Teslim edilenler</span><div class="chips"><span class="chip">Remarketing campaigns<small>Yeniden pazarlama kampanyaları</small></span><span class="chip">Landing page variations<small>Açılış sayfası varyasyonları</small></span><span class="chip">Email and WhatsApp sequences<small>E-posta ve WhatsApp dizileri</small></span><span class="chip">AI SDR agent (pilot) <span class="opt">(optional)</span><small>Yapay zekâ SDR (pilot)</small></span><span class="chip">Monthly results review<small>Aylık sonuç değerlendirmesi</small></span></div></div>
+   </div>
+   <div class="card stage rv"><div class="top"><span class="qn">Q3</span><h3>Expansion</h3><small>Genişleme · days 180 to 270</small><p class="goal">Open the second platform and let the AI agent handle pre-qualification at scale.<span class="tr n">Amaç: İkinci platformu açmak ve ön nitelendirmeyi geniş ölçekte yapay zekâ ajanına bırakmak.</span></p></div>
+    <ul>
+     <li><div><p class="b"><b>Second platform live.</b> Google or Meta, whichever was not used first, with its own landing page.</p><p class="tr">İkinci platform yayında. Başlangıç kanalı hangisi değilse (Google ya da Meta), kendi açılış sayfasıyla.</p></div></li>
+     <li><div><p class="b"><b>AI SDR in full operation <span class="opt">(optional)</span>.</b> Replies 24 hours a day, qualifies and books meetings straight into your team's calendar.</p><p class="tr"><span class="opt">(isteğe bağlı)</span> Yapay zekâ SDR tam kapasitede. Günün 24 saati yanıt verir, nitelendirir ve görüşmeleri doğrudan ekibinizin takvimine planlar.</p></div></li>
+     <li><div><p class="b"><b>Budget split by result.</b> Spend is split between Meta and Google according to each one's cost per opportunity.</p><p class="tr">Bütçe sonuca göre dağıtılır. Meta ve Google arasındaki yatırım, her birinin fırsat başına maliyetine göre belirlenir.</p></div></li>
+    </ul>
+    <div class="dl"><span class="lbl">You receive · Teslim edilenler</span><div class="chips"><span class="chip">Funnel on the second platform<small>İkinci platformda huni</small></span><span class="chip">Landing page for the second platform<small>İkinci platform için açılış sayfası</small></span><span class="chip">AI SDR in full operation <span class="opt">(optional)</span><small>Tam kapasitede yapay zekâ SDR</small></span><span class="chip">Dashboard with both channels<small>İki kanallı gösterge paneli</small></span></div></div>
+   </div>
+   <div class="card stage rv"><div class="top"><span class="qn">Q4</span><h3>Conversion</h3><small>Dönüşüm · days 270 to 365</small><p class="goal">Reach people earlier in their decision and scale investment where the return is proven.<span class="tr n">Amaç: İnsanlara karar süreçlerinin daha başında ulaşmak ve yatırımı getirinin kanıtlandığı yerde büyütmek.</span></p></div>
+    <ul>
+     <li><div><p class="b"><b>Digital lead magnet.</b> A free, useful material (a guide, a diagnostic tool or a class) that attracts people who are still researching.</p><p class="tr">Dijital lead mıknatısı. Henüz araştırma aşamasındaki kişileri çeken ücretsiz ve faydalı bir içerik (rehber, teşhis aracı veya ders).</p></div></li>
+     <li><div><p class="b"><b>Scale on proven ROI.</b> Budget increases only on the channels and campaigns that already return.</p><p class="tr">Kanıtlanmış getiriyle ölçekleme. Bütçe yalnızca zaten getiri sağlayan kanal ve kampanyalarda artırılır.</p></div></li>
+     <li><div><p class="b"><b>Year review.</b> Full results report and the plan for year two.</p><p class="tr">Yıl değerlendirmesi. Kapsamlı sonuç raporu ve ikinci yılın planı.</p></div></li>
+    </ul>
+    <div class="dl"><span class="lbl">You receive · Teslim edilenler</span><div class="chips"><span class="chip">Lead magnet and its page<small>Lead mıknatısı ve sayfası</small></span><span class="chip">Scaled campaigns<small>Ölçeklenmiş kampanyalar</small></span><span class="chip">Annual results report<small>Yıllık sonuç raporu</small></span><span class="chip">Year-two plan<small>İkinci yıl planı</small></span></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- GLOSSARY -->
+<section class="band alt" id="glossary">
+ <div class="wrap">
+  <div class="eb">Glossary <span class="t">· Terimler sözlüğü</span></div>
+  <h2 class="h2 rv" style="color:var(--navy)">The terms in this proposal, <em>in plain words.</em></h2>
+  <p class="htr">Bu teklifteki terimler, sade bir dille.</p>
+  <div class="gl">
+   <div class="card rv"><h3>Lead<small>Lead (potansiyel müşteri)</small></h3><p class="b">A person who left their contact details. A name, not yet a sale.</p><p class="tr">İletişim bilgilerini bırakan kişi. Bir isim; henüz satış değil.</p></div>
+   <div class="card rv"><h3>Opportunity<small>Fırsat</small></h3><p class="b">A lead with the right profile, a recognized pain and the right moment to buy. What your sales team should receive.</p><p class="tr">Doğru profile, kabul edilmiş bir soruna ve doğru satın alma anına sahip lead. Satış ekibinize ulaşması gereken budur.</p></div>
+   <div class="card rv"><h3>Landing page<small>Açılış sayfası</small></h3><p class="b">A single page built for one offer and one action: filling in the form. No menu and no distractions.</p><p class="tr">Tek bir teklif ve tek bir eylem için hazırlanmış sayfa: formu doldurmak. Menü ve dikkat dağıtan öğe yoktur.</p></div>
+   <div class="card rv"><h3>Website<small>Web sitesi</small></h3><p class="b">Your company's institutional address, with several pages (about, services, contact). Builds credibility; converts less than a landing page because it offers many paths.</p><p class="tr">Şirketinizin birçok sayfadan oluşan kurumsal adresi. Güven oluşturur; birçok yol sunduğu için açılış sayfasından daha az dönüşüm sağlar.</p></div>
+   <div class="card rv"><h3>Funnel<small>Satış hunisi</small></h3><p class="b">The sequence of steps between the first contact with the ad and the sale.</p><p class="tr">Reklamla ilk temas ile satış arasındaki adımlar dizisi.</p></div>
+   <div class="card rv"><h3>Creative<small>Reklam görseli (kreatif)</small></h3><p class="b">The ad itself: image or video plus text, shown on Meta or Google.</p><p class="tr">Reklamın kendisi: Meta veya Google'da gösterilen görsel ya da video ve metin.</p></div>
+   <div class="card rv"><h3>Remarketing<small>Yeniden pazarlama</small></h3><p class="b">Ads shown only to people who already visited your page and did not take the next step.</p><p class="tr">Yalnızca sayfanızı daha önce ziyaret edip bir sonraki adımı atmamış kişilere gösterilen reklamlar.</p></div>
+   <div class="card rv"><h3>AI SDR<small>Yapay zekâ SDR</small></h3><p class="b">SDR is the person who qualifies contacts before the salesperson. Here an AI agent does it on WhatsApp, 24 hours a day. <span class="opt">(optional)</span> A person can do it instead, and we recommend that for the first 90 to 180 days.</p><p class="tr">SDR, satış temsilcisinden önce kişileri nitelendiren kişidir. Burada bu işi WhatsApp'ta 7/24 bir yapay zekâ ajanı yapar. <span class="opt">(isteğe bağlı)</span></p></div>
+   <div class="card rv"><h3>Lead magnet<small>Lead mıknatısı</small></h3><p class="b">Free useful content offered in exchange for contact details, to start the relationship earlier.</p><p class="tr">İlişkiyi daha erken başlatmak için iletişim bilgileri karşılığında sunulan ücretsiz, faydalı içerik.</p></div>
+   <div class="card rv"><h3>Dashboard<small>Gösterge paneli</small></h3><p class="b">A live panel in Looker with the numbers of the operation, updated automatically.</p><p class="tr">Operasyonun rakamlarını gösteren, otomatik güncellenen canlı Looker paneli.</p></div>
+   <div class="card rv"><h3>Cost per opportunity<small>Fırsat başına maliyet</small></h3><p class="b">Ad spend divided by the number of qualified opportunities. The main efficiency metric of this program.</p><p class="tr">Medya yatırımının nitelikli fırsat sayısına bölümü. Bu programın ana verimlilik ölçütü.</p></div>
+   <div class="card rv"><h3>ROI<small>Yatırım getirisi</small></h3><p class="b">Revenue generated divided by the amount invested. 20x means R$ 20 back for each R$ 1 invested.</p><p class="tr">Elde edilen gelirin yatırılan tutara bölümü. 20x, yatırılan her 1 için 20 geri dönüş demektir.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- NEEDS -->
+<section class="band">
+ <div class="wrap">
+  <div class="eb">Your side of the work <span class="t">· Sizin tarafınız</span></div>
+  <h2 class="h2 rv" style="color:var(--navy)">What we need from <em>your company.</em></h2>
+  <p class="htr">Şirketinizden ihtiyacımız olanlar.</p>
+  <div class="needs">
+   <div class="card rv"><div class="ico"><svg><use href="#i-key"/></svg></div><h3>Access<small>Erişimler</small></h3><ul>
+    <li><p class="b">Meta and Google ad accounts, or we create them with you.</p><p class="tr">Meta ve Google reklam hesapları; yoksa sizinle birlikte açarız.</p></li>
+    <li><p class="b">Website domain, to publish the landing pages.</p><p class="tr">Açılış sayfalarını yayınlamak için web sitesi alan adı.</p></li>
+    <li><p class="b">Your CRM, or the tool where your team records sales.</p><p class="tr">CRM'iniz ya da ekibinizin satışları kaydettiği araç.</p></li>
+    <li><p class="b">A WhatsApp Business number for the AI agent. <span class="opt">(optional)</span></p><p class="tr">Yapay zekâ ajanı için bir WhatsApp Business numarası. <span class="opt">(isteğe bağlı)</span></p></li></ul></div>
+   <div class="card rv"><div class="ico"><svg><use href="#i-team"/></svg></div><h3>People<small>Kişiler</small></h3><ul>
+    <li><p class="b">One decision-maker as the main contact.</p><p class="tr">Ana irtibat kişisi olarak bir karar verici.</p></li>
+    <li><p class="b">Partners available for the diagnosis interviews in weeks 1 and 2.</p><p class="tr">1. ve 2. haftadaki teşhis görüşmeleri için ortakların katılımı.</p></li>
+    <li><p class="b">The sales team in the weekly alignment meeting.</p><p class="tr">Satış ekibinin haftalık uyum toplantısına katılımı.</p></li></ul></div>
+   <div class="card rv"><div class="ico"><svg><use href="#i-info"/></svg></div><h3>Information<small>Bilgiler</small></h3><ul>
+    <li><p class="b">Sales data from the last 6 to 12 months.</p><p class="tr">Son 6 ile 12 aya ait satış verileri.</p></li>
+    <li><p class="b">Average ticket, margin and length of the sales cycle.</p><p class="tr">Ortalama satış tutarı, kâr marjı ve satış döngüsünün süresi.</p></li>
+    <li><p class="b">Current offers, prices and the objections your team hears most.</p><p class="tr">Mevcut teklifler, fiyatlar ve ekibinizin en sık duyduğu itirazlar.</p></li></ul></div>
+   <div class="card rv"><div class="ico"><svg><use href="#i-check"/></svg></div><h3>Approvals and budget<small>Onaylar ve bütçe</small></h3><ul>
+    <li><p class="b">Quick feedback on creatives and pages, so tests don't stall.</p><p class="tr">Testlerin durmaması için görsellere ve sayfalara hızlı geri bildirim.</p></li>
+    <li><p class="b">Paid media budget, minimum US$ 1,976 per month, paid directly to Meta and Google.</p><p class="tr">Doğrudan Meta ve Google'a ödenen, aylık en az 1.976 ABD doları reklam bütçesi.</p></li></ul></div>
+  </div>
+ </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="band dark2">
+ <div class="glow" style="width:640px;height:640px;background:#11a6f9;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.14"></div>
+ <div class="wrap grid2">
+  <div class="rv">
+   <div class="eb">Execution guarantee <span class="t">· Uygulama garantisi</span></div>
+   <h2 class="h1">The risk is <em>ours.</em></h2>
+   <p class="htr">Risk bize ait.</p>
+   <div class="lead" style="margin-top:28px"><p>If within 6 months the revenue generated by these opportunities isn't at least double the amount invested in the program, we keep working with no additional charge until it is.</p><p class="tr n">6 ay içinde bu fırsatlardan elde edilen gelir, programa yatırılan tutarın en az iki katına ulaşmazsa, bu hedefe ulaşılana kadar ek ücret almadan çalışmaya devam ederiz.</p></div>
+   <p class="fine">Maximum extension: 12 additional months from month 6 · Azami uzatma: 6. aydan itibaren 12 ek ay</p>
+  </div>
+  <div class="gauge rv" aria-hidden="true">
+   <svg viewBox="0 0 400 400">
+    <defs><linearGradient id="gg" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#1b7fd0"/><stop offset="1" stop-color="#5cc6ff"/></linearGradient></defs>
+    <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="18"/>
+    <circle id="garc" cx="200" cy="200" r="150" fill="none" stroke="url(#gg)" stroke-width="18" stroke-linecap="round" stroke-dasharray="942" stroke-dashoffset="942" transform="rotate(-90 200 200)" style="transition:stroke-dashoffset 1.8s cubic-bezier(.2,.7,.2,1)"/>
+    <circle cx="200" cy="200" r="118" fill="none" stroke="rgba(255,255,255,.06)"/>
+    <g fill="#6c71a3" font-size="11" letter-spacing="2" text-anchor="middle"><text x="200" y="38">MONTH 0</text><text x="370" y="205">3</text><text x="200" y="372">MONTH 6</text></g>
+    <text x="200" y="215" text-anchor="middle" fill="#fff" style="font-family:'Instrument Serif',serif" font-size="110">2<tspan fill="#11a6f9" font-style="italic">x</tspan></text>
+    <text x="200" y="252" text-anchor="middle" fill="#9ea3cc" font-size="12" letter-spacing="2.4">REVENUE vs INVESTMENT</text>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="band" id="investment">
+ <div class="wrap">
+  <div class="eb">Investment · Conversion Protocol 360 <span class="t">· Yatırım</span></div>
+  <h2 class="h2 rv" style="color:var(--navy)">12 months, <em>fully installed.</em></h2>
+  <p class="htr">12 ay, eksiksiz kurulum.</p>
+  <div class="price-grid">
+   <div class="card hero-price rv">
+    <div class="glow" style="width:340px;height:340px;background:#11a6f9;right:-120px;top:-120px;opacity:.35"></div>
+    <p class="lbl">Monthly investment · Aylık yatırım</p>
+    <p class="amt"><strong class="mo">US$ 1,581</strong><i>/month</i></p>
+    <p class="sub"><strong>12 monthly installments of US$ 1,581</strong> (≈ R$ 9,344/month). Full program: US$ 18,972 (≈ R$ 112,125).</p>
+    <p class="tr n">Aylık 1.581 ABD doları, 12 taksit. Programın tamamı: 18.972 ABD doları.</p>
+    <div class="permo"><p class="lbl" style="margin-bottom:10px">What you pay each month · Her ay hesabınızdan çıkan tutar</p>
+     <div><span>Program installment</span><strong>US$ 1,581</strong></div>
+     <div><span>Minimum ad spend, paid directly to Meta and Google</span><strong>US$ 1,976</strong></div>
+     <div class="tot"><span>Minimum monthly total</span><strong>US$ 3,557</strong></div>
+     <p class="tr n">Program taksiti + doğrudan Meta ve Google'a ödenen asgari reklam bütçesi.</p></div>
+    <div class="stack">
+     <p class="lbl" style="margin-bottom:12px">Year-one total, excluding media · Medya hariç ilk yıl toplamı</p>
+     <div class="sb"><span style="width:11.1%;background:#5cc6ff"></span><span style="width:88.9%;background:linear-gradient(90deg,#1b7fd0,#11a6f9)"></span></div>
+     <div class="rows">
+      <div><span><i style="background:#5cc6ff"></i>Initial setup · Kurulum ücreti</span><span>US$ 2,372</span></div>
+      <div><span><i style="background:#11a6f9"></i>12 installments</span><span>US$ 18,972</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,.14);padding-top:10px;color:#fff;font-weight:400"><span>Setup + 12 installments</span><span style="font-family:var(--serif);font-size:24px">US$ 21,344</span></div>
+     </div>
+     <p class="tr n">Kurulum + 12 taksit</p>
+    </div>
+   </div>
+   <div class="side">
+    <div class="card rv"><p class="lbl">Initial setup · Kurulum ücreti</p><p class="amt">US$ 2,372</p><p class="b">One-time payment · ≈ R$ 14,019</p><p class="tr n">Tek seferlik ödeme</p></div>
+    <div class="card rv"><p class="lbl">Minimum paid media investment · Asgari reklam bütçesi</p><p class="amt"><strong class="mo" style="color:var(--navy)">US$ 1,976</strong><i>/month</i></p><p class="b">≈ R$ 11,678/month · paid directly to the platforms (Meta and Google). Not billed by us.</p><p class="tr n">Doğrudan platformlara (Meta ve Google) ödenir. Tarafımızca faturalandırılmaz.</p></div>
+    <div class="card rv" style="display:flex;justify-content:space-between;gap:16px;align-items:center"><div><p class="lbl">Payment method · Ödeme yöntemi</p><p class="amt" style="font-size:28px">Credit card</p><p class="tr n">Kredi kartı</p></div><div class="ico" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></div></div>
+   </div>
+  </div>
+  <p class="disc">USD/BRL reference: commercial dollar closing rate of 11/24/2026 (R$ 5.91). Prices valid for 30 days from 11/25/2026. · USD/BRL referansı: 24.11.2026 ticari dolar kapanış kuru (R$ 5,91). Fiyatlar 25.11.2026'dan itibaren 30 gün geçerlidir.</p>
+ </div>
+</section>
+
+<!-- NEXT + CLOSE -->
+<section class="band dark" style="overflow:hidden">
+ <div class="glow" style="width:700px;height:700px;background:#11a6f9;right:-300px;bottom:-300px;opacity:.2"></div>
+ <div class="wrap">
+  <div class="eb">Next steps <span class="t">· Sonraki adımlar</span></div>
+  <div class="next">
+   <div class="card rv"><span class="pn">01</span><p class="b">Review this proposal with your partner.</p><p class="tr">Bu teklifi ortağınızla birlikte değerlendirin.</p></div>
+   <div class="card rv"><span class="pn">02</span><p class="b">Schedule a call with Luan to answer any remaining questions.</p><p class="tr">Kalan soruları yanıtlamak için Luan ile bir görüşme planlayın.</p></div>
+   <div class="card rv"><span class="pn">03</span><p class="b">Sign and start: the diagnosis begins in week 1.</p><p class="tr">İmzalayın ve başlayın: teşhis 1. haftada başlar.</p></div>
+  </div>
+  <div class="cta rv">
+   <h2 class="h1">Take control of your sales and your <em>profit.</em></h2>
+   <p class="htr">Satışlarınızın ve kârınızın kontrolünü elinize alın.</p>
+   <div class="lead" style="margin:24px auto 0"><p>That's what we install. The work begins when you sign, with the diagnosis in week 1.</p><p class="tr n">Kurduğumuz şey budur. Çalışma imzayla başlar; teşhis 1. haftada yapılır.</p></div>
+  </div>
+  <div class="foot"><span class="logo"><span class="wm">Luan de Medeiros</span><i class="bdot"></i></span><span>@o.luandemedeiros</span></div>
+ </div>
+</section>
+
+<script>
+{
+const NS='http://www.w3.org/2000/svg';
+const g=document.getElementById('parts');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let seed=7;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+for(let i=0;i<70;i++){
+ const y0=30+rnd()*440, x0=10+rnd()*120, win=i%9===0;
+ const yEnd=win?250:250+(rnd()-.5)*(60+rnd()*300);
+ const xEnd=win?430:240+rnd()*150;
+ const d=`M${x0} ${y0} C ${x0+140} ${y0}, ${xEnd-120} ${yEnd}, ${xEnd} ${yEnd}`;
+ const c=document.createElementNS(NS,'circle');
+ c.setAttribute('r',win?3.2:1.8);c.setAttribute('fill',win?'#5cc6ff':'#8f93b8');c.setAttribute('opacity',win?1:.45);
+ if(reduce){c.setAttribute('cx',x0);c.setAttribute('cy',y0)}else{
+  const m=document.createElementNS(NS,'animateMotion');m.setAttribute('dur',(4+rnd()*4).toFixed(1)+'s');m.setAttribute('begin',(-rnd()*8).toFixed(1)+'s');m.setAttribute('repeatCount','indefinite');m.setAttribute('path',d);c.appendChild(m);
+  const a=document.createElementNS(NS,'animate');a.setAttribute('attributeName','opacity');a.setAttribute('values',win?'0;1;1':'0;.6;0');a.setAttribute('dur',m.getAttribute('dur'));a.setAttribute('begin',m.getAttribute('begin'));a.setAttribute('repeatCount','indefinite');c.appendChild(a)}
+ g.appendChild(c);
+}
+const dots=document.getElementById('dots');const opp=[23,57,88,121,146,178];
+dots.innerHTML=Array.from({length:200},(_,i)=>`<i class="${opp.includes(i)?'o':''}"></i>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const arc=document.getElementById('garc');
+const go=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){arc.style.strokeDashoffset='0';go.disconnect()}}),{threshold:.3});go.observe(arc);
+}
+</script>
+</body>
+</html>
